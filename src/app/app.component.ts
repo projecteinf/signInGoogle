@@ -8,20 +8,6 @@ import { environment } from '../environments/environment.development';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, RouterLink],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(environment.google.client_id),
-          },
-        ],
-      } as SocialAuthServiceConfig,
-    },
-  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
